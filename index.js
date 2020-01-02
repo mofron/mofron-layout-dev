@@ -1,31 +1,48 @@
 /**
- * @file mofron-layout-xxx/index.js
- * @author simpart
+ * @file mofron-layout-dev/index.js
+ * @brief layout module template for developper
+ * @license MIT
  */
-
-/**
- * @class xxx
- * @brief layout class
- */
-mofron.layout.xxx = class extends mofron.Layout {
-    
-    constructor (prm) {
+module.exports = class extends mofron.class.Layout {
+    /**
+     * initialize layout
+     * 
+     * @param (mixed) 
+     *                key-value: layout config
+     * @short
+     * @type private
+     */
+    constructor (p1) {
         try {
             super();
-            this.name('xxx');
+            this.name('xxx');  // please set module name
+	    this.shortForm();  // please set short form parameter name
+
+	    /* init config */
+
+	    if (0 < arguments.length) {
+                this.config(p1);
+	    }
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
     
-    layoutConts (idx, tgt) {
+    /**
+     * layout contents
+     * 
+     * @param (number) target child index
+     * @param (component) target component object
+     * @type private
+     */
+    contents (idx, cmp) {
         try {
-            // layout contents
+	    /* layout contents */
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
 }
-module.exports = mofron.layout.xxx;
+/* end of file */
